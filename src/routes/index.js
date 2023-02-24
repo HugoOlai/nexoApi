@@ -43,6 +43,7 @@ router.get('/',function (req, res, next) {
 });
 controller
 router.post('/registrarInformacoesPessoais', jsonParser, controller.post);
-
+router.post('/atualizarInformacoesPessoais', jsonParser, controller.put);
+router.post('/deletarInformacoesPessoais', jsonParser, controller.delete);
 router.get('/registrarInformacoesPessoais', jsonParser, controller.get);
 module.exports = router;

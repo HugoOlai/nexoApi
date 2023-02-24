@@ -3,19 +3,24 @@ const business = require("../business/Business");
 exports.post = (req, res, next) => {
     console.log('estou na rota')
     console.log(req.body)
-    var teste = business.salvarUsuario(req);
-    res.status(200).send(teste);
+    var result = business.salvarUsuario(req);
+    return res.status(200).send(result);
 };
-exports.get = (req, res, next) => {
+exports.get = async (req, res, next) => {
     let id = req.params.id;
-    var teste = business.pegarUsuario(req);
-    res.status(200).send(teste);
+    var result = await business.pegarUsuario(req);
+    console.log(result)
+    return res.status(200).send(result);
 };
-exports.put = (req, res, next) => {
+exports.put = async (req, res, next) => {
     let id = req.params.id;
-    res.status(201).send(`Requisição recebida com sucesso! ${id}`);
+    var result = await business.atualizarUsuario(req);
+    console.log(result)
+    return res.status(201).send(`Requisição recebida com sucesso! ${id}`);
 };
-exports.delete = (req, res, next) => {
+exports.delete = async (req, res, next) => {
     let id = req.params.id;
-    res.status(200).send(`Requisição recebida com sucesso! ${id}`);
+    var result = await business.deletarUsuario(req);
+    console.log(result)
+    return res.status(200).send(`Requisição recebida com sucesso! ${id}`);
 };
