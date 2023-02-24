@@ -1,17 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// const PISchema = new Schema({
-//     nome: {
-//         type: String,
-//         default: ''
-//     },
-//     email: {
-//         type: String,
-//         default: ''
-//     },   
-//   });
-
 const PISchema = new Schema({
     primeiroNome: {
     type: String,

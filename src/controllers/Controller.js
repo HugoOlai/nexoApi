@@ -16,19 +16,16 @@ exports.get = async (req, res, next) => {
     if(pegarTodos)
         result = await business.pegarTodos();
     
-        console.log(result)
     return res.status(200).send(result);
 };
 
 exports.put = async (req, res, next) => {
     let id = req.params.id;
     var result = await business.atualizarUsuario(req);
-    console.log(result)
-    return res.status(201).send(`Requisição recebida com sucesso! ${id}`);
+    return res.status(201).send(result);
 };
 exports.delete = async (req, res, next) => {
     let id = req.params.id;
     var result = await business.deletarUsuario(req);
-    console.log(result)
-    return res.status(200).send(`Requisição recebida com sucesso! ${id}`);
+    return res.status(200).send(result);
 };
